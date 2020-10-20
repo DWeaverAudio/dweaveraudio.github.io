@@ -1,10 +1,17 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
-const token ='NzY3OTc1ODk5Nzg2MTE3MTQx.X45vSg.TPaXabryOoTWy9CmgFNuB9sDX48'
+const token = process.env.TOKEN;
 
 client.login(token)
 
 client.on('ready',()=>{
-  console.log("Whaddup");
+  console.log("heyo!")
+})
+
+client.on('message',msg=>{
+          let args = msg.content;
+          if(args.includes("mss")){
+            msg.reply(":D");
+          }
 })
